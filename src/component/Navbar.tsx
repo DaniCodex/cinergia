@@ -42,7 +42,7 @@ export default function Navbar() {
             <div className="shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src={isDarkTheme ? "/logoazul.png": "/logoblanco.png"}
+                  src={isDarkTheme ? "/logo-azul-comprimido.jpeg": "/logo-blanco-comprimido.jpeg"}
                   alt='cinergia logo'
                   width={50}
                   height={50}
