@@ -79,6 +79,7 @@ export default function Header() {
               fill
               className="object-cover object-center"
               priority={index === 0} 
+              quality={85}
             />
           </div>
           
