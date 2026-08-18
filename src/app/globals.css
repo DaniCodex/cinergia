@@ -1,1 +1,87 @@
+/**
+ * app/globals.css
+ * ─────────────────────────────────────────────────────────────────────────
+ * QUÉ: El único archivo CSS "global" del proyecto. Define el DESIGN SYSTEM
+ * de CINERGIA (punto B2 y B3 del brief) usando el sistema `@theme` de
+ * Tailwind CSS v4, que reemplazó al viejo `tailwind.config.js` de v3.
+ *
+ * POR QUÉ ESTO ES MEJOR:
+ * El sitio original NO tenía ningún color de marca definido como token:
+ * cada componente escribía sus propios hex codes sueltos y ligeramente
+ * distintos entre sí para lo que debería ser "el mismo azul":
+ *   - Header.tsx / Metrics.tsx usaban "#001830" y "#005bb5"
+ *   - MisionVision.tsx / PartnersCTA.tsx usaban "#1b365d" y "#002B5B"
+ *   - ValoresEstadisticas.tsx usaba "#1f2e4d" y "#0066cc"
+ * Cuatro variaciones de "azul oscuro" y dos de "azul principal" en el
+ * mismo sitio, sin relación declarada entre ellas — así que cambiar el
+ * azul de marca hubiera significado buscar y reemplazar a mano en más de
+ * diez archivos, con alto riesgo de dejar alguno afuera.
+ *
+ * Con `@theme`, se definen los 4 colores corporativos EXACTOS que pidió
+ * el brief, UNA sola vez. Automáticamente Tailwind genera las utilidades
+ * `bg-brand-blue`, `text-brand-dark`, `border-brand-orange`, etc. —
+ * incluyendo variantes de opacidad (`bg-brand-blue/10`) — para usarlas en
+ * cualquier componente, sin volver a escribir un hex code nunca más.
+ * ─────────────────────────────────────────────────────────────────────────
+ */
 @import "tailwindcss";
+
+@theme {
+  /* ===== Colores corporativos de CINERGIA (los 4 exactos del brief) ===== */
+  /** Azul claro: fondos suaves, superficies alternas, hover states sutiles. */
+  --color-brand-blue-light: #cce5ff;
+  /** Azul oscuro (principal): links, botones secundarios, iconografía. */
+  --color-brand-blue: #0066cc;
+  /** Naranja: acentos y llamadas a la acción (CTAs). Usar con moderación. */
+  --color-brand-orange: #f29918;
+  /** Azul muy oscuro: texto principal, headers, fondos "oscuros" del sitio. */
+  --color-brand-dark: #003360;
+
+  /* ===== Tipografía =====
+     Conecta las CSS variables que expone next/font (ver lib/fonts.ts)
+     con el sistema de utilidades de Tailwind. `--font-sans` sobrescribe
+     la fuente sans-serif por defecto de Tailwind en TODO el sitio;
+     `--font-display` agrega la utilidad nueva `font-display` para
+     títulos. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ===== Estilos base ===== */
+@layer base {
+  html {
+    /* Desplazamiento suave al navegar a anclas (ej. #contacto), mejor UX. */
+    scroll-behavior: smooth;
+    /* Compensa la altura del navbar fijo (h-20 = 5rem) al saltar a una ancla,
+       para que el título de destino no quede tapado detrás del navbar. */
+    scroll-padding-top: 5rem;
+  }
+
+  /* Respeta la preferencia de accesibilidad del sistema operativo: si la
+     persona pidió "menos movimiento", desactivamos el scroll suave y
+     dejamos que Reveal.tsx (ver ese componente) también se comporte en
+     consecuencia. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-white text-brand-dark antialiased;
+  }
+
+  /* Estado de foco consistente y visible en toda la app: importante para
+     personas que navegan con teclado (punto A7, accesibilidad). Se usa
+     `:focus-visible` (no `:focus`) para no mostrar el anillo en clics de
+     mouse, solo en navegación por teclado. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-orange);
+    color: white;
+  }
+}
