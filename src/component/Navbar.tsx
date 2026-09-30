@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HomeIcon from "./HomeIcon";
+import logoBlue from "../../public/home/logo-blue.webp";
 
 const links = [
   { label: "Nosotros", href: "/#nosotros" },
@@ -18,7 +19,7 @@ export default function Navbar() {
   return <header className="sticky top-0 z-50 bg-white shadow-[0_2px_12px_rgba(0,36,78,.08)]">
     <nav aria-label="Navegación principal" className="mx-auto flex h-[64px] max-w-[1320px] items-center justify-between gap-6 px-5 min-[820px]:h-[82px] min-[820px]:px-8 lg:px-12">
       <Link href="/" onClick={() => setOpen(false)} className="flex shrink-0 items-center gap-1.5 text-[#063368]" aria-label="CINERGIA, inicio">
-        <Image src="/home/logo-blue.webp" alt="" width={48} height={48} className="h-[40px] w-[40px] object-contain min-[820px]:h-[48px] min-[820px]:w-[48px]" />
+        <Image src={logoBlue} alt="" width={48} height={48} className="h-[40px] w-[40px] object-contain min-[820px]:h-[48px] min-[820px]:w-[48px]" />
         <span className="text-[17px] font-extrabold tracking-[.035em] min-[820px]:text-[18px]">CINERGIA</span>
       </Link>
       <div className="hidden items-center gap-5 min-[820px]:flex lg:gap-8">
