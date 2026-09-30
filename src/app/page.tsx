@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HomeIcon, { type HomeIconName } from "@/component/HomeIcon";
+import PrinciplesCarousel from "@/component/PrinciplesCarousel";
 import ScrollReveal from "@/component/ScrollReveal";
 import styles from "./home.module.css";
 
@@ -81,7 +82,7 @@ export default function Home() {
         <SectionTitle id="principios">NUESTROS PRINCIPIOS</SectionTitle>
         <div className={styles.principlesGrid}>
           <div className={styles.principleList}>{principles.map(({ label, description, icon }, index) => <details className={styles.principle} key={label} data-reveal data-reveal-delay={index}><summary><HomeIcon name={icon} size={27} /><strong>{label}</strong><HomeIcon name="chevron" size={19} className={styles.principleChevron} /></summary><p>{description}</p></details>)}</div>
-          <div className={styles.principlesImage} data-reveal data-reveal-delay="1"><Image src="/home/principles.webp" alt="Estudiantes de ingeniería durante una visita industrial" fill sizes="(max-width: 760px) 100vw, 58vw" /></div>
+          <PrinciplesCarousel />
         </div>
       </section>
 
