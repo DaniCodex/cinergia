@@ -32,7 +32,7 @@
 .sectionTitle h2 { font-size: clamp(25px, 2.7vw, 37px); line-height: 1.08; font-weight: 900; letter-spacing: -.045em; margin: 0 0 20px; }
 .about { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
 .aboutImage { position: relative; height: clamp(250px, 24vw, 350px); overflow: hidden; border-radius: 20px; }
-.aboutImage img, .principlesImage img, .photo img { object-fit: cover; }
+.aboutImage img, .principlesImage img, .impactPhoto img { object-fit: cover; }
 .aboutCopy > p { font-size: clamp(16px, 1.35vw, 20px); font-weight: 500; line-height: 1.35; margin: 0 0 19px; }
 .aboutValues { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; text-align: center; }
 .aboutValues > div { display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: 11px; }
@@ -74,14 +74,15 @@
 .carouselDot { width: 10px; height: 10px; padding: 0; border: 1px solid #fff; border-radius: 50%; background: rgba(0,43,91,.55); cursor: pointer; box-shadow: 0 1px 5px rgba(0,0,0,.3); }
 .carouselDotActive { background: var(--orange); border-color: var(--orange); }
 @media (prefers-reduced-motion: reduce) { .carouselSlide { transition: none; } }
-.impactGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
-.impactCard { min-height: 184px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 16px; color: #fff; text-align: center; }
+.impactGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(170px, 20vw, 250px); gap: 17px; }
+.impactCard, .impactPhoto { min-width: 0; border-radius: 16px; overflow: hidden; }
+.impactCard { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 7px; padding: 12px; color: #fff; text-align: center; }
+.impactPhoto { position: relative; }
 .orange { background: linear-gradient(140deg, #ff9d12, #fa970c); }
 .navy { background: linear-gradient(140deg, #00366d, #002c5c); }
-.impactCard strong { font-size: clamp(27px, 2.7vw, 39px); line-height: 1; font-weight: 900; letter-spacing: -.04em; }
-.impactCard span { font-size: clamp(14px, 1.2vw, 17px); line-height: 1.18; font-weight: 800; }
-.photoGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; margin-top: 16px; }
-.photo { position: relative; aspect-ratio: 1.7; border-radius: 14px; overflow: hidden; }
+.impactCard strong { font-size: clamp(36px, 4vw, 58px); line-height: .95; font-weight: 900; letter-spacing: -.06em; }
+.impactCard span { font-size: clamp(14px, 1.5vw, 20px); line-height: 1.08; font-weight: 800; }
+.impactCard .impactUppercase { font-size: clamp(15px, 1.8vw, 24px); line-height: 1.1; text-transform: uppercase; }
 .teamGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .teamCard, .teamCta { min-height: 245px; border-radius: 16px; }
 .teamCard { padding: 16px 10px; background: #f8fbfe; border: 1px solid #e5ebf2; box-shadow: 0 7px 20px rgba(0,38,79,.08); text-align: center; }
@@ -106,8 +107,7 @@
 .footer:before, .footer:after { content: ""; position: absolute; width: 250px; height: 250px; border: 4px solid var(--orange); border-radius: 50%; bottom: -180px; pointer-events: none; }
 .footer:before { left: -175px; }.footer:after { right: -175px; }
 .footerInner { width: min(100% - 80px, 1240px); margin: auto; padding: 37px 0 22px; display: grid; grid-template-columns: 1.35fr .7fr 1.25fr; gap: 46px; }
-.footerLogo { display: inline-flex; align-items: center; gap: 5px; color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .16em; }
-.footerLogo img { object-fit: contain; filter: grayscale(1) contrast(100) invert(1); mix-blend-mode: screen; }
+.footerLogo { display: inline-flex; align-items: center; color: #fff; font-size: 26px; font-weight: 800; letter-spacing: .16em; }
 .footerBrand p { max-width: 290px; font-size: 12px; line-height: 1.5; margin: 13px 0 0; }
 .footerBrand p strong { color: var(--orange); }
 .footer h3 { color: var(--orange); font-size: 13px; font-weight: 900; margin: 3px 0 13px; }
@@ -123,7 +123,7 @@
   .heroInner { padding: 0 38px; }
   .content, .footerInner { width: min(100% - 76px, 1240px); }
   .about { gap: 28px; }
-  .careerGrid, .impactGrid, .photoGrid, .teamGrid { gap: 11px; }
+  .careerGrid, .impactGrid, .teamGrid { gap: 11px; }
   .careerCard { gap: 11px; padding: 12px; }
   .missionCard { padding: 22px 18px; }
   .missionCard p { font-size: 13px; }
@@ -145,7 +145,8 @@
   .about, .principlesGrid { grid-template-columns: 1fr; gap: 23px; }
   .aboutImage { height: auto; aspect-ratio: 1.9; }
   .aboutCopy > p { font-size: 16px; }
-  .careerGrid, .impactGrid, .teamGrid { grid-template-columns: repeat(2, 1fr); }
+  .careerGrid, .impactGrid, .teamGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .impactGrid { grid-auto-rows: clamp(150px, 45vw, 190px); }
   .careerCard { min-height: 84px; }
   .careerCard strong { font-size: 12px; }
   .missionGrid { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -155,9 +156,6 @@
   .missionHeading h3 { font-size: 19px; }
   .missionHeading svg { width: 30px; }
   .principlesImage { min-height: 300px; }
-  .impactCard { min-height: 160px; }
-  .photoGrid { grid-template-columns: repeat(2, 1fr); }
-  .photo { aspect-ratio: 1.5; }
   .teamCard, .teamCta { min-height: 230px; }
   .partners { align-items: center; flex-direction: column; }
   .partnersMain { width: 100%; }
@@ -172,6 +170,7 @@
   .hero { height: 510px; }
   .heroActions { gap: 8px; }
   .primaryButton, .outlineButton { font-size: 11px; padding: 0 12px; }
+  .impactCard .impactUppercase { font-size: clamp(12px, 3.2vw, 15px); }
   .sectionTitle h2 { font-size: 25px; }
   .careerCard { gap: 7px; padding: 10px; }
   .careerCard svg { width: 25px; }

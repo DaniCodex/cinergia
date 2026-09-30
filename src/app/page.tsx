@@ -19,13 +19,6 @@ const principles: { label: string; description: string; icon: HomeIconName }[] =
   { label: "Construimos con integridad", description: "Actuamos con responsabilidad, respeto y compromiso.", icon: "shield" },
   { label: "Aprendemos para avanzar", description: "Exploramos nuevas ideas para enfrentar los retos de la ingeniería.", icon: "book" },
 ];
-const impactPhotos = [
-  { src: "/home/impact-visit.webp", alt: "Estudiantes de CINERGIA durante una visita a Gloria" },
-  { src: "/home/impact-mentoring.webp", alt: "Estudiantes en una actividad de aprendizaje" },
-  { src: "/home/impact-certificate.webp", alt: "Certificado de una actividad de CINERGIA" },
-  { src: "/home/impact-community.webp", alt: "Comunidad de estudiantes frente al campus" },
-];
-
 function SectionTitle({ children, id }: { children: ReactNode; id: string }) {
   return <div className={styles.sectionTitle} id={id} data-reveal><span className={styles.titleRule} /><h2>{children}</h2></div>;
 }
@@ -89,12 +82,15 @@ export default function Home() {
       <section className={styles.section} aria-labelledby="impacto">
         <SectionTitle id="impacto">NUESTRO IMPACTO</SectionTitle>
         <div className={styles.impactGrid}>
-          <div className={`${styles.impactCard} ${styles.orange}`} data-reveal><HomeIcon name="people" size={42} /><strong data-count="600">+600</strong><span>Estudiantes<br />alcanzados</span></div>
-          <div className={`${styles.impactCard} ${styles.navy}`} data-reveal data-reveal-delay="1"><HomeIcon name="presentation" size={42} /><strong data-count="17">+17</strong><span>Charlas, mentorías<br />y visitas</span></div>
-          <div className={`${styles.impactCard} ${styles.orange}`} data-reveal data-reveal-delay="2"><HomeIcon name="handshake" size={42} /><strong data-count="12">+12</strong><span>Alianzas</span></div>
-          <div className={`${styles.impactCard} ${styles.navy}`} data-reveal data-reveal-delay="3"><HomeIcon name="building" size={42} /><span>Respaldo<br />institucional</span></div>
+          <div className={`${styles.impactCard} ${styles.orange}`} data-reveal><strong data-count="600">+600</strong><span>Estudiantes<br />alcanzados</span></div>
+          <div className={styles.impactPhoto} data-reveal data-reveal-delay="1"><Image src="/home/impact-mentoring.webp" alt="Estudiantes en una actividad de aprendizaje" fill sizes="(max-width: 760px) 50vw, 25vw" /></div>
+          <div className={`${styles.impactCard} ${styles.navy}`} data-reveal data-reveal-delay="2"><strong data-count="12">+12</strong><span className={styles.impactUppercase}>Alianzas</span></div>
+          <div className={styles.impactPhoto} data-reveal data-reveal-delay="3"><Image src="/home/impact-community.webp" alt="Comunidad de estudiantes frente al campus" fill sizes="(max-width: 760px) 50vw, 25vw" /></div>
+          <div className={styles.impactPhoto} data-reveal><Image src="/home/impact-visit.webp" alt="Estudiantes de CINERGIA durante una visita a Gloria" fill sizes="(max-width: 760px) 50vw, 25vw" /></div>
+          <div className={`${styles.impactCard} ${styles.navy}`} data-reveal data-reveal-delay="1"><strong data-count="17">+17</strong><span>Charlas<br />Mentorías<br />Visitas</span></div>
+          <div className={styles.impactPhoto} data-reveal data-reveal-delay="2"><Image src="/home/impact-certificate.webp" alt="Certificado de una actividad de CINERGIA" fill sizes="(max-width: 760px) 50vw, 25vw" /></div>
+          <div className={`${styles.impactCard} ${styles.orange}`} data-reveal data-reveal-delay="3"><span className={styles.impactUppercase}>Respaldo<br />institucional</span></div>
         </div>
-        <div className={styles.photoGrid}>{impactPhotos.map(({ src, alt }, index) => <div className={styles.photo} key={src} data-reveal data-reveal-delay={index}><Image src={src} alt={alt} fill sizes="(max-width: 760px) 50vw, 25vw" /></div>)}</div>
       </section>
 
       <section className={styles.section} aria-labelledby="equipo">
@@ -124,9 +120,9 @@ export default function Home() {
     </div>
 
     <footer className={styles.footer} id="contacto"><div className={styles.footerInner}>
-      <div className={styles.footerBrand} data-reveal><Link href="#inicio" className={styles.footerLogo}><Image src="/home/logo-blue.webp" alt="" width={44} height={44} /><span>CINERGIA</span></Link><p>Conectamos estudiantes con oportunidades profesionales e ideas que impulsan <strong>su futuro como ingenieros.</strong></p></div>
+      <div className={styles.footerBrand} data-reveal><Link href="#inicio" className={styles.footerLogo}>CINERGIA</Link><p>Conectamos estudiantes con oportunidades profesionales e ideas que impulsan <strong>su futuro como ingenieros.</strong></p></div>
       <div className={styles.footerLinks} data-reveal data-reveal-delay="1"><h3>EXPLORA</h3><Link href="#nosotros">Nosotros</Link><Link href="#impacto">Eventos</Link><Link href="#principios">Proyectos</Link><Link href="#carreras">Cursos y Becas</Link><Link href="#equipo">Conoce al equipo</Link></div>
-      <div className={styles.footerContact} data-reveal data-reveal-delay="2"><h3>CONTACTO</h3><p><HomeIcon name="mail" size={18} /> odin.cinergia.ucsur@gmail.com</p><p><HomeIcon name="pin" size={18} /> Universidad Científica del Sur,<br />Lima, Perú</p><div className={styles.footerSocials}><HomeIcon name="instagram" size={19} /><HomeIcon name="linkedin" size={19} /><HomeIcon name="youtube" size={19} /></div></div>
+      <div className={styles.footerContact} data-reveal data-reveal-delay="2"><h3>CONTACTO</h3><p><HomeIcon name="mail" size={18} /> adm.cinergia.ucsur@gmail.com</p><p><HomeIcon name="pin" size={18} /> Universidad Científica del Sur,<br />Lima, Perú</p><div className={styles.footerSocials}><HomeIcon name="instagram" size={19} /><HomeIcon name="linkedin" size={19} /><HomeIcon name="youtube" size={19} /></div></div>
       <div className={styles.footerBottom}><span>© 2026 CINERGIA, Asociación Estudiantil de la Universidad Científica del Sur.<br />Todos los derechos reservados.</span><span>Privacidad&nbsp;&nbsp; | &nbsp;&nbsp;Términos de uso</span></div>
     </div></footer>
   </main>;
