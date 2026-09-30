@@ -40,6 +40,8 @@
 .aboutValues > div:nth-child(2) span { color: var(--orange); background: #fff8ed; }
 .careerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .careerCard { min-height: 89px; display: flex; align-items: center; gap: 18px; padding: 16px 18px; border-radius: 16px; color: #fff; background: linear-gradient(120deg, #00295a, #06417f); box-shadow: 0 9px 17px rgba(0,35,74,.16); }
+.careerCard:hover { box-shadow: 0 12px 23px rgba(0,35,74,.3); filter: brightness(1.1); }
+.careerCard:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
 .careerCard svg { flex: 0 0 auto; }
 .careerCard strong { font-size: clamp(12px, 1.08vw, 16px); line-height: 1.15; }
 .missionGrid { display: grid; grid-template-columns: 1fr .84fr 1fr; gap: 14px; align-items: end; }

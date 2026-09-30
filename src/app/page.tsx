@@ -5,11 +5,11 @@ import HomeIcon, { type HomeIconName } from "@/component/HomeIcon";
 import ScrollReveal from "@/component/ScrollReveal";
 import styles from "./home.module.css";
 
-const careers: { label: string; icon: HomeIconName }[] = [
-  { label: "Ing. Industrial", icon: "gear" },
-  { label: "Ing. Empresarial y de Sistemas", icon: "network" },
-  { label: "Ing. Software", icon: "laptop" },
-  { label: "Ing. IA y Ciencia de Datos", icon: "chart" },
+const careers: { label: string; icon: HomeIconName; href: string }[] = [
+  { label: "Ing. Industrial", icon: "gear", href: "https://www.cientifica.edu.pe/carreras/ingenieria-industrial/" },
+  { label: "Ing. Empresarial y de Sistemas", icon: "network", href: "https://www.cientifica.edu.pe/carreras/ingenieria-empresarial-y-de-sistemas/" },
+  { label: "Ing. Software", icon: "laptop", href: "https://www.cientifica.edu.pe/carreras/ingenieria-de-software/" },
+  { label: "Ing. IA y Ciencia de Datos", icon: "chart", href: "https://www.cientifica.edu.pe/carreras/ingenieria-inteligencia-artificial-ciencia-datos/" },
 ];
 const principles: { label: string; description: string; icon: HomeIconName }[] = [
   { label: "Hacemos que suceda", description: "Convertimos ideas en experiencias y proyectos reales.", icon: "rocket" },
@@ -65,7 +65,7 @@ export default function Home() {
 
       <section className={styles.section} aria-labelledby="carreras">
         <SectionTitle id="carreras">NUESTRAS CARRERAS</SectionTitle>
-        <div className={styles.careerGrid}>{careers.map(({ label, icon }, index) => <div className={styles.careerCard} key={label} data-reveal data-reveal-delay={index}><HomeIcon name={icon} size={34} /><strong>{label}</strong></div>)}</div>
+        <div className={styles.careerGrid}>{careers.map(({ label, icon, href }, index) => <a className={styles.careerCard} href={href} key={label} data-reveal data-reveal-delay={index}><HomeIcon name={icon} size={34} /><strong>{label}</strong></a>)}</div>
       </section>
 
       <section className={styles.section} aria-labelledby="mision-vision">
