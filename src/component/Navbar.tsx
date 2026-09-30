@@ -26,7 +26,6 @@ export default function Navbar() {
         {links.map(link => <Link key={link.label} href={link.href} className="text-[14px] font-extrabold text-[#083568] transition-colors hover:text-[#ff9d11]">{link.label}</Link>)}
       </div>
       <div className="hidden items-center gap-4 min-[820px]:flex">
-        <span className="hidden text-[#083568] lg:inline-flex" aria-label="WhatsApp"><HomeIcon name="whatsapp" size={20} /></span>
         <span className="hidden text-[#083568] lg:inline-flex" aria-label="Instagram"><HomeIcon name="instagram" size={20} /></span>
         <span className="hidden text-[#083568] lg:inline-flex" aria-label="LinkedIn"><HomeIcon name="linkedin" size={20} /></span>
         <Link href="/#contacto" className="inline-flex h-[46px] items-center gap-2 rounded-xl bg-[#ff9d11] px-6 text-[14px] font-extrabold text-white shadow-[0_5px_13px_rgba(255,157,17,.25)] transition-colors hover:bg-[#ed900d]">Únete <HomeIcon name="arrow" size={18} /></Link>
