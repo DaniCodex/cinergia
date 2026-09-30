@@ -66,7 +66,7 @@ export default function Home() {
 
       <section className={styles.section} aria-labelledby="carreras">
         <SectionTitle id="carreras">NUESTRAS CARRERAS</SectionTitle>
-        <div className={styles.careerGrid}>{careers.map(({ label, icon, href }, index) => <a className={styles.careerCard} href={href} key={label} data-reveal data-reveal-delay={index}><HomeIcon name={icon} size={34} /><strong>{label}</strong></a>)}</div>
+        <div className={styles.careerGrid}>{careers.map(({ label, icon, href }, index) => <a className={styles.careerCard} href={href} target="_blank" rel="noopener noreferrer" key={label} data-reveal data-reveal-delay={index}><HomeIcon name={icon} size={34} /><strong>{label}</strong></a>)}</div>
       </section>
 
       <section className={styles.section} aria-labelledby="mision-vision">
