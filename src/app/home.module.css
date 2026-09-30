@@ -13,7 +13,7 @@
 .heroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,35,74,.55), rgba(0,35,74,.18) 47%, transparent 76%); }
 .heroInner { position: relative; z-index: 1; max-width: 1240px; height: 100%; margin: auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; }
 .heroCopy { max-width: 515px; margin-top: 10px; text-shadow: 0 2px 12px rgba(0,22,49,.14); }
-.heroCopy h1 { font-size: clamp(48px, 5.8vw, 84px); line-height: .98; letter-spacing: -.065em; font-weight: 900; margin: 0 0 13px; }
+.heroCopy h1 { font-size: clamp(48px, 5.8vw, 84px); line-height: .98; letter-spacing: -.035em; font-weight: 900; margin: 0 0 13px; }
 .heroTagline { font-size: clamp(25px, 2.7vw, 40px); line-height: 1.08; font-weight: 800; margin: 0; letter-spacing: -.045em; }
 .heroTagline strong { color: var(--orange); }
 .heroDescription { max-width: 360px; font-size: clamp(14px, 1.25vw, 18px); font-weight: 500; line-height: 1.42; margin: 23px 0 25px; }
