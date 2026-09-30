@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HomeIcon, { type HomeIconName } from "@/component/HomeIcon";
-import PrinciplesCarousel from "@/component/PrinciplesCarousel";
+import PhotoCarousel from "@/component/PhotoCarousel";
 import ScrollReveal from "@/component/ScrollReveal";
 import styles from "./home.module.css";
 
@@ -52,7 +52,7 @@ export default function Home() {
 
     <div className={styles.content}>
       <section className={styles.about} aria-labelledby="nosotros">
-        <div className={styles.aboutImage} data-reveal><Image src="/home/about.webp" alt="Integrantes de CINERGIA frente a la universidad" fill sizes="(max-width: 760px) 100vw, 50vw" /></div>
+        <PhotoCarousel variant="about" />
         <div className={styles.aboutCopy}>
           <SectionTitle id="nosotros">¿QUIÉNES SOMOS?</SectionTitle>
           <p data-reveal>Una comunidad de estudiantes de ingeniería que conecta ideas, personas y oportunidades para seguir creciendo dentro y fuera de las aulas.</p>
@@ -82,7 +82,7 @@ export default function Home() {
         <SectionTitle id="principios">NUESTROS PRINCIPIOS</SectionTitle>
         <div className={styles.principlesGrid}>
           <div className={styles.principleList}>{principles.map(({ label, description, icon }, index) => <details className={styles.principle} key={label} data-reveal data-reveal-delay={index}><summary><HomeIcon name={icon} size={27} /><strong>{label}</strong><HomeIcon name="chevron" size={19} className={styles.principleChevron} /></summary><p>{description}</p></details>)}</div>
-          <PrinciplesCarousel />
+          <PhotoCarousel variant="principles" />
         </div>
       </section>
 
