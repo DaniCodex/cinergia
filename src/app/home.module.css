@@ -130,10 +130,10 @@
   .partnerGrid { gap: 8px; }
 }
 @media (max-width: 760px) {
-  .hero { height: 590px; }
+  .hero { height: 540px; }
   .heroImage { object-position: 63% center; }
   .heroShade { background: linear-gradient(90deg, rgba(0,31,67,.86), rgba(0,31,67,.46) 68%, rgba(0,31,67,.15)); }
-  .heroInner { padding: 0 24px; align-items: end; padding-bottom: 52px; }
+  .heroInner { padding: 0 24px 78px; align-items: end; }
   .heroCopy h1 { font-size: clamp(48px, 10vw, 64px); }
   .heroTagline { font-size: 29px; }
   .heroDescription { max-width: 290px; font-size: 14px; }
@@ -167,7 +167,7 @@
   .footerBottom { flex-direction: column; margin-top: 8px; }
 }
 @media (max-width: 430px) {
-  .hero { height: 560px; }
+  .hero { height: 510px; }
   .heroActions { gap: 8px; }
   .primaryButton, .outlineButton { font-size: 11px; padding: 0 12px; }
   .sectionTitle h2 { font-size: 25px; }
