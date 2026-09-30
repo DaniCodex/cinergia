@@ -1,15 +1,21 @@
-import { Inter, Montserrat, Outfit } from 'next/font/google';
+import localFont from "next/font/local";
 
-export const inter = Inter({ 
-  subsets: ['latin'] 
+// These are the Latin subsets already cached by this project during local development.
+// Keeping them local allows production builds without a Google Fonts network request.
+export const inter = localFont({
+  src: "./fonts/inter-latin.woff2",
+  weight: "100 900",
+  display: "swap",
 });
 
-export const outfit = Outfit({ 
-  weight: ['400','500','700'], 
-  subsets: ['latin'] 
+export const outfit = localFont({
+  src: "./fonts/outfit-latin.woff2",
+  weight: "400 700",
+  display: "swap",
 });
 
-export const montserrat = Montserrat({
-  subsets:['latin'],
-  weight:['400','600','700','800','900']
-})
+export const montserrat = localFont({
+  src: "./fonts/montserrat-latin.woff2",
+  weight: "400 900",
+  display: "swap",
+});
