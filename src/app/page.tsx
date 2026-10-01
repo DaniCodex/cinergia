@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import HomeIcon, { type HomeIconName } from "@/component/HomeIcon";
 import PhotoCarousel from "@/component/PhotoCarousel";
 import PartnersCarousel from "@/component/PartnersCarousel";
@@ -36,8 +35,8 @@ export default function Home() {
           <p className={styles.heroTagline}>Cruza la meta,<br /><strong>dejando huella.</strong></p>
           <p className={styles.heroDescription}>Conectamos estudiantes, ideas y oportunidades para impulsar un futuro como ingenieros.</p>
           <div className={styles.heroActions}>
-            <Link href="#contacto" className={styles.primaryButton}>Únete a CINERGIA <HomeIcon name="arrow" size={18} /></Link>
-            <Link href="#nosotros" className={styles.outlineButton}>Conoce más</Link>
+            <a href="#contacto" className={styles.primaryButton}>Únete a CINERGIA <HomeIcon name="arrow" size={18} /></a>
+            <a href="#nosotros" className={styles.outlineButton}>Conoce más</a>
           </div>
         </div>
         <p className={styles.heroNote}><span>Más</span><br />que ingeniería,<br />comunidad</p>
@@ -100,7 +99,7 @@ export default function Home() {
           <article className={styles.teamCard} data-reveal><div className={styles.avatar} aria-label="Retrato pendiente">JE</div><h3>Joaquín<br />Espichán</h3><p>Presidente</p></article>
           <article className={styles.teamCard} data-reveal data-reveal-delay="1"><div className={styles.avatar} aria-label="Retrato pendiente">CC</div><h3>Christofaith<br />Contreras</h3><p>Vicepresidente</p></article>
           <article className={styles.teamCard} data-reveal data-reveal-delay="2"><div className={styles.avatar} aria-label="Retrato pendiente">LB</div><h3>Lucero<br />Bernal</h3><p>Directora de Eventos</p></article>
-          <Link href="#contacto" className={styles.teamCta} data-reveal data-reveal-delay="3"><HomeIcon name="people" size={42} /><strong>Un equipo con grandes ideas para llegar más lejos.</strong><span><HomeIcon name="chevron" size={22} /></span></Link>
+          <a href="#contacto" className={styles.teamCta} data-reveal data-reveal-delay="3"><HomeIcon name="people" size={42} /><strong>Un equipo con grandes ideas para llegar más lejos.</strong><span><HomeIcon name="chevron" size={22} /></span></a>
         </div>
       </section>
 
@@ -115,8 +114,8 @@ export default function Home() {
     </div>
 
     <footer className={styles.footer} id="contacto"><div className={styles.footerInner}>
-      <div className={styles.footerBrand} data-reveal><Link href="#inicio" className={styles.footerLogo}>CINERGIA</Link><p>Conectamos estudiantes con oportunidades profesionales e ideas que impulsan <strong>su futuro como ingenieros.</strong></p></div>
-      <div className={styles.footerLinks} data-reveal data-reveal-delay="1"><h3>EXPLORA</h3><Link href="#nosotros">Nosotros</Link><Link href="#impacto">Eventos</Link><Link href="#principios">Proyectos</Link><Link href="#carreras">Cursos y Becas</Link><Link href="#equipo">Conoce al equipo</Link></div>
+      <div className={styles.footerBrand} data-reveal><a href="#inicio" className={styles.footerLogo}>CINERGIA</a><p>Conectamos estudiantes con oportunidades profesionales e ideas que impulsan <strong>su futuro como ingenieros.</strong></p></div>
+      <div className={styles.footerLinks} data-reveal data-reveal-delay="1"><h3>EXPLORA</h3><a href="#nosotros">Nosotros</a><a href="#impacto">Eventos</a><a href="#principios">Proyectos</a><a href="#carreras">Cursos y Becas</a><a href="#equipo">Conoce al equipo</a></div>
       <div className={styles.footerContact} data-reveal data-reveal-delay="2"><h3>CONTACTO</h3><p><HomeIcon name="mail" size={18} /> adm.cinergia.ucsur@gmail.com</p><p><HomeIcon name="pin" size={18} /> Universidad Científica del Sur,<br />Lima, Perú</p><div className={styles.footerSocials}><a href="https://www.instagram.com/cinergia.ucsur/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de CINERGIA"><HomeIcon name="instagram" size={19} /></a><a href="https://www.linkedin.com/company/cinergiaucsur/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de CINERGIA"><HomeIcon name="linkedin" size={19} /></a><HomeIcon name="whatsapp" size={19} /></div></div>
       <div className={styles.footerBottom}><span>© 2026 CINERGIA, Asociación Estudiantil de la Universidad Científica del Sur.<br />Todos los derechos reservados.</span><span>Privacidad&nbsp;&nbsp; | &nbsp;&nbsp;Términos de uso</span></div>
     </div></footer>
