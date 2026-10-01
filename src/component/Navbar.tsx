@@ -7,6 +7,7 @@ import HomeIcon from "./HomeIcon";
 import logoBlue from "../../public/home/logo-blue.webp";
 
 const links = [
+  { label: "Inicio", href: "/#inicio" },
   { label: "Nosotros", href: "/#nosotros" },
   { label: "Eventos", href: "/#impacto" },
   { label: "Proyectos", href: "/#principios" },
