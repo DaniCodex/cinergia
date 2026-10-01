@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HomeIcon, { type HomeIconName } from "@/component/HomeIcon";
 import PhotoCarousel from "@/component/PhotoCarousel";
+import PartnersCarousel from "@/component/PartnersCarousel";
 import ScrollReveal from "@/component/ScrollReveal";
 import styles from "./home.module.css";
 
@@ -107,13 +108,7 @@ export default function Home() {
         <div className={styles.partnersMain}>
           <SectionTitle id="partners">NUESTROS PARTNERS</SectionTitle>
           <p data-reveal>Aliados que creen en el talento joven y en el poder de la colaboración.</p>
-          <div className={styles.partnerGrid}>
-            <div className={styles.partnerTile} data-reveal><strong className={styles.coneii}>CONEII</strong><small>Comunidad de ingeniería</small></div>
-            <div className={styles.partnerTile} data-reveal data-reveal-delay="1"><Image src="/home/partner-aiesec.webp" alt="AIESEC" width={140} height={140} /></div>
-            <div className={styles.partnerTile} data-reveal data-reveal-delay="2"><Image src="/home/partner-lead.webp" alt="LEAD Universidad Científica del Sur" width={140} height={140} /></div>
-            <div className={styles.partnerTile} data-reveal data-reveal-delay="3"><Image src="/home/partner-nucleo.webp" alt="Núcleo Centro Cultural" width={140} height={140} /></div>
-            <div className={styles.partnerTile} data-reveal data-reveal-delay="4"><strong className={styles.morePartners}>Y MÁS<br />ALIADOS...</strong></div>
-          </div>
+          <PartnersCarousel />
         </div>
         <div className={styles.partnersMascot} data-reveal data-reveal-delay="2"><Image src="/home/partners-mascot.jpg" alt="Mascota de CINERGIA celebrando sus alianzas" fill sizes="(max-width: 760px) 190px, 250px" /></div>
       </section>
