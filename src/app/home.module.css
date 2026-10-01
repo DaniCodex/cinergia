@@ -8,7 +8,7 @@
 }
 .home * { box-sizing: border-box; }
 .home a { text-decoration: none; }
-.hero { position: relative; height: clamp(430px, 41vw, 620px); background: #052e5c; color: #fff; }
+.hero { position: relative; height: clamp(430px, 41vw, 620px); scroll-margin-top: 82px; background: #052e5c; color: #fff; }
 .heroImage { object-fit: cover; object-position: center; }
 .heroShade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,35,74,.55), rgba(0,35,74,.18) 47%, transparent 76%); }
 .heroInner { position: relative; z-index: 1; max-width: 1240px; height: 100%; margin: auto; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; }
