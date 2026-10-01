@@ -122,6 +122,8 @@
 .footerContact p { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; line-height: 1.4; margin: 0 0 14px; }
 .footerContact svg { flex: 0 0 auto; }
 .footerSocials { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+.footerSocials a { display: inline-flex; color: inherit; transition: color .2s; }
+.footerSocials a:hover { color: var(--orange); }
 .footerBottom { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 20px; margin-top: 24px; font-size: 10px; line-height: 1.45; }
 @media (max-width: 980px) {
   .heroInner { padding: 0 38px; }
